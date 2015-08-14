@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+
+    <meta charset="utf-8">
+    <meta name="description" content="Twitch API to Search Streams">
+    <meta name="keywords" content="Twitch API, JavaScript, JSONP">
+    <meta name="author" content="James O'Brien">
+
+    <title>Search Twitch Streams</title>
+
+    <!-- TELLS PHONES NOT TO LIE ABOUT THEIR WIDTH -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- *************** LOAD THE GOOGLE FONT ****************** -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+
+
+    <!-- *************** STYLE SHEETS ****************** -->
+    <link href="styles/reset.css" rel="stylesheet">
+    <!-- phone-default : mobile first design -->
+    <link href="styles/phone-default.css" rel="stylesheet">
+    <!-- enhance-tablet -->
+    <link href="styles/tablet.css" rel="stylesheet">
+    <!-- enhance-desktop -->
+    <link href="styles/desktop.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+    <script src="scripts/utilities/namespace.js"></script>
+    <script src="scripts/services/configservice.js"></script>
+    <script src="scripts/services/uiservice.js"></script>
+    <script src="scripts/services/alertservice.js"></script>
+    <script src="scripts/services/jsonpservice.js"></script>
+    <script src="scripts/ui/streamsearch.js"></script>
+
+    <script>
+        window.onload = function () {
+            sony.twitch.ui.streamsearch.init();
+        };
+
+    </script>
+
+</head>
+<body>
+
+
+    <div id="headerWrapper">
+        <header>
+
+            <h1>Twitch Stream Search Tool</h1>
+
+        </header>
+    </div><!-- end of header wrapper -->
+    
+    <div id="contentWrapper">
+
+        <div id="searchContent">
+            <div class="row">
+                <div class="column-12">
+                    <input type="text" id="queryString" value="Search query..." >
+                    <input type="button" id="searchbtn" value="Search">
+                    <input type="button" id="resetbtn" value="Reset">
+                    <div id="alerts"></div>
+                </div> <!-- end of the col -->
+            </div> <!-- end of the row -->
+
+        </div>
+
+
+        <div id="resultsContent">
+
+            <div class="row">
+                
+                <div class="column-10 resultTotal">                    
+                        <span id="totalResults"></span>
+                </div> <!-- end of column -->
+
+                <div class="column-2 resultPagination">                    
+                    <input type="button" id="searchPreviousbtn" value="<">
+                    <span id="currentPage"></span>
+                    <input type="button" id="searchNextbtn" value=">" >
+                </div><!-- end of column -->
+
+            </div> <!-- end of row-->
+            
+            <div class="row">
+                <div class="column-10">
+                    <!--append results here.-->
+                    <div id="results">
+
+                    </div>
+                </div><!-- end of column -->
+                <div class="column-2">
+
+                </div><!-- end of column -->
+
+            </div><!-- end of row -->
+
+    </div><!-- end of resultsContent wrapper -->
+
+    </div><!-- end of content wrapper -->
+
+    <div id="footerWrapper">
+            <footer>
+                <p> Author &bull; James O'Brien  &bull; </p>
+            </footer>
+        </div><!-- end of footer wrapper -->
+
+</body>
+</html>
